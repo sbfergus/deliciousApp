@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./carouselStyles.css";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import '@splidejs/react-splide/css';
+import {Link, useParams} from 'react-router-dom';
 
 
 function Popular() {
@@ -43,11 +44,12 @@ function Popular() {
                 return (
                     <SplideSlide key={recipe.id}>
                         <div className='card'>
-                            <p>{recipe.title}</p>
-                            <img src={recipe.image} alt={recipe.title} />
-                            <div className='gradient'></div>
+                            <Link to={`/recipe/${recipe.id}`}>
+                                <p>{recipe.title}</p>
+                                <img src={recipe.image} alt={recipe.title} />
+                                <div className='gradient'></div>
+                            </Link>
                         </div>
-                        
                     </SplideSlide>
                 )
             })}
