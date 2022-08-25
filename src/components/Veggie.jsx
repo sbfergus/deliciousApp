@@ -42,8 +42,8 @@ function Veggie() {
                           <div className='card'>
                               <p>{recipe.title}</p>
                               <img src={recipe.image} alt={recipe.title} />
+                              <div className='gradient'/>
                           </div>
-                          <div className='gradient'/>
                       </SplideSlide>
                   )
               })}
