@@ -5,7 +5,7 @@ import {Link, useParams} from 'react-router-dom';
 function Searched() {
     const [searchedRecipes, setSearchedRecipes] = useState([]);
     let params = useParams();
-    //console.log(params.search);
+    
     const getSearchedRecipes = async (name) => {
         const data = await fetch(`
         https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${name}`);
