@@ -33,6 +33,14 @@ function Veggie() {
               <h3>Our Vegitarian Picks</h3>
               <Splide options={{
                   perPage: 3,
+                  breakpoints: {
+                    850: {
+                        perPage: 2,
+                    },
+                    530: {
+                        perPage: 1,
+                    },
+                  },
                   arrows: false,
                   pagination: false,
                   drag: "free",

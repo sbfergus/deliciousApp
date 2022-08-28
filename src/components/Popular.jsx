@@ -35,6 +35,17 @@ function Popular() {
             <h3>Popular Picks</h3>
             <Splide options={{
                 perPage: 4,
+                breakpoints: {
+                    1150: {
+                        perPage: 3,
+                    },
+                    850: {
+                        perPage: 2,
+                    },
+                    530: {
+                        perPage: 1,
+                    },
+                },
                 arrows: false,
                 pagination: false,
                 drag: "free",
