@@ -22,19 +22,21 @@ function Recipe() {
     <DetailWrapper>
       <div>
         <h2 style={{ fontSize: "2rem"}}>{details.title}</h2>
-        <img src={details.image} alt="" />
+        <RecipeImg src={details.image} alt="" />
       </div>
       <Info>
-        <Button 
-          className={activeTab==='instructions'? 'active' : ''} 
-          onClick={() => setActiveTab('instructions')}>
-            Instructions
-        </Button>
-        <Button 
-          className={activeTab==='ingredients'? 'active' : ''} 
-          onClick={() => setActiveTab('ingredients')}>
-            Ingredients
-        </Button>
+        <ButtonWapper>
+          <Button 
+            className={activeTab==='instructions'? 'active' : ''} 
+            onClick={() => setActiveTab('instructions')}>
+              Instructions
+          </Button>
+          <Button 
+            className={activeTab==='ingredients'? 'active' : ''} 
+            onClick={() => setActiveTab('ingredients')}>
+              Ingredients
+          </Button>
+        </ButtonWapper>
         {activeTab === 'instructions' && 
         (<div style={{marginTop: "2rem"}}>
           <h3 dangerouslySetInnerHTML={{__html:details.summary}}></h3>
@@ -59,6 +61,13 @@ function Recipe() {
   )
 }
 
+const RecipeImg = styled.img`
+@media (max-width: 1170px) {
+  width: 100%;
+  margin-bottom: 2rem; 
+  };
+`;
+
 const DetailWrapper = styled.div`
   margin-top: 2rem;
   margin-bottom: 5rem;
@@ -78,6 +87,9 @@ const DetailWrapper = styled.div`
   ul {
     margin-top: 2rem;
   }
+  @media (max-width: 1170px) {
+    flex-direction: column;
+  };
 `;
 
 const Button = styled.button`
@@ -87,11 +99,19 @@ const Button = styled.button`
   border: 2px solid black;
   margin-right: 2rem;
   font-weight: 600;
+  cursor: pointer;
 `;
 
 const Info = styled.div`
   margin-left: 10rem;
-  
+  @media (max-width: 1170px) {
+    margin-left: 0rem;
+  };
+`;
+
+const ButtonWapper = styled.div`
+  display: flex;
+  justify-content: left;
 `;
 
 export default Recipe

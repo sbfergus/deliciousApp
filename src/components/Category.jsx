@@ -32,7 +32,6 @@ const List = styled.div`
     display: flex;
     justify-content: center;
     margin-top: 2rem;
-    margin-bottom: 0;
 `;
 
 const SLink = styled(NavLink)`
@@ -48,30 +47,54 @@ const SLink = styled(NavLink)`
     height: 6rem;
     cursor: pointer;
     transform: scale(0.8);
+    transition: 1s ease all;
+
+    @media (max-width: 600px) {
+        width: 5rem;
+        height: 5rem;
+        margin-right: 1rem;
+    };
+
     h4 {
         color: white;
         font-size: 0.8rem;
         margin: 0;
         margin-bottom: .25rem;
-    }
+
+        @media (max-width: 600px) {
+            font-size: 0.6rem;
+        };
+    };
 
     svg {
         color: white;
         font-size: 1.5rem;
         margin: 0;
         margin-bottom: .25rem;
-    }
+    };
     
     &.active {
         background: linear-gradient(to right, #f27121, #e94057)
-    }
+    };
+
+    &:hover {
+        background: lightblue;
+        transform: scale(.95);
+        transition: 1s ease all;
+        h4 {
+            color: #494949; 
+        };
+        svg {
+            color: #494949;
+        };
+    };
 
     svg {
         color: white;
-    }
+    };
     h4 {
         color: white;
-    } 
+    };
 `;
 
 
