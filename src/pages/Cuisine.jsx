@@ -39,6 +39,7 @@ function Cuisine() {
 }
 
 const Grid = styled(motion.div)`
+  margin: 2rem 0rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-gap: 3rem;
@@ -54,6 +55,8 @@ const Card = styled.div`
   h4 {
     text-align: center;
     padding: 1rem;
+    margin: 0;
+    margin-top: 1rem;
   }
 `;
 

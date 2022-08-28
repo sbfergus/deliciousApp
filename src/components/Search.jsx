@@ -16,7 +16,7 @@ function Search() {
 
   return (
     <FormStyle onSubmit={submitHandler}>
-        <div>
+        <div style={{marginTop:0}}>
             <FaSearch />
             <input 
                 type="text" 

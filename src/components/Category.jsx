@@ -31,7 +31,8 @@ function Category() {
 const List = styled.div`
     display: flex;
     justify-content: center;
-    margin: 2rem 0rem;
+    margin-top: 2rem;
+    margin-bottom: 0;
 `;
 
 const SLink = styled(NavLink)`
@@ -47,7 +48,6 @@ const SLink = styled(NavLink)`
     height: 6rem;
     cursor: pointer;
     transform: scale(0.8);
-
     h4 {
         color: white;
         font-size: 0.8rem;
@@ -71,10 +71,8 @@ const SLink = styled(NavLink)`
     }
     h4 {
         color: white;
-    }
-
-    
-`
+    } 
+`;
 
 
 

@@ -1,5 +1,5 @@
-import {useEffect, useState} from 'react';
-import {Link, useParams} from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 function Recipe() {
@@ -12,7 +12,6 @@ function Recipe() {
       const data = await fetch(`
       https://api.spoonacular.com/recipes/${name}/information?apiKey=${process.env.REACT_APP_API_KEY}`);
       const recipeInfo = await data.json();
-      //console.log(recipes.results);
       setDetails(recipeInfo);
   }
   useEffect(() => {
@@ -22,7 +21,7 @@ function Recipe() {
   return (
     <DetailWrapper>
       <div>
-        <h2>{details.title}</h2>
+        <h2 style={{ fontSize: "2rem"}}>{details.title}</h2>
         <img src={details.image} alt="" />
       </div>
       <Info>
@@ -37,13 +36,13 @@ function Recipe() {
             Ingredients
         </Button>
         {activeTab === 'instructions' && 
-        (<div>
+        (<div style={{marginTop: "2rem"}}>
           <h3 dangerouslySetInnerHTML={{__html:details.summary}}></h3>
           <h3 dangerouslySetInnerHTML={{__html:details.instructions}}></h3>
         </div>)
         }
         {activeTab === 'ingredients' && 
-        (<div>
+        (<div >
           <ul>
           {details.extendedIngredients.map((ingredient) => {
             return (
@@ -61,7 +60,7 @@ function Recipe() {
 }
 
 const DetailWrapper = styled.div`
-  margin-top: 10rem;
+  margin-top: 2rem;
   margin-bottom: 5rem;
   display: flex;
   .active {
@@ -92,6 +91,7 @@ const Button = styled.button`
 
 const Info = styled.div`
   margin-left: 10rem;
+  
 `;
 
 export default Recipe
