@@ -58,7 +58,7 @@ const removeIngredient = (e) => {
                 )
             })}
         </IngredientList>
-        <IngredientsLink to={`/recipesByIngredients/`}>Find Recipe</IngredientsLink>
+        <IngredientsLink to={`/recipesByIngredients/${ingredients}`}>Find Recipe</IngredientsLink>
     </Wrapper>
   )
 }
