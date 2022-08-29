@@ -14,13 +14,15 @@ let newItem;
 const submitHandler = (e) => {
     e.preventDefault();
     setIngredients([...ingredients, userInput])
-    //form.reset();
     setUserInput('');
-    
 }
 
 const changeHandler = (e) => {
     setUserInput(e.target.value)
+}
+
+const clickHandler = () => {
+    return console.log(ingredients)
 }
 
   return (
@@ -49,7 +51,7 @@ const changeHandler = (e) => {
                 )
             })}
         </IngredientList>
-        
+        <Button onClick={clickHandler}>Find Recipe</Button>
     </Wrapper>
   )
 }
@@ -96,6 +98,18 @@ const FormStyle = styled.form`
         transform: translate(100%, -50%);
         color: white;
     }
+`
+
+const Button = styled.button`
+    background: linear-gradient(35deg, #494949, #313131);
+    font-size: 1.5rem;
+    color: white;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
 `
 
 export default IngredientSearch
