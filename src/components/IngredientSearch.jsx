@@ -1,15 +1,12 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import {FaSearch} from 'react-icons/fa';
+import { useState } from 'react';
+import {FaSearch, FaRegTimesCircle} from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 function IngredientSearch() {
 
 const [ingredients, setIngredients] = useState([]);
 const [userInput, setUserInput] = useState('');
-const form = document.getElementById("ingredientForm");
-const inputIngredient = document.getElementById("ingredientInput");
-let newItem;
 
 const submitHandler = (e) => {
     e.preventDefault();
@@ -18,12 +15,16 @@ const submitHandler = (e) => {
 }
 
 const changeHandler = (e) => {
+    e.preventDefault();
     setUserInput(e.target.value)
 }
 
-const clickHandler = () => {
-    return console.log(ingredients)
+const removeIngredient = (e) => {
+    e.preventDefault();
+    const name = e.target.parentNode.getAttribute('name');
+    setIngredients([...ingredients].filter(item => item !== name))
 }
+
 
   return (
     <Wrapper>
@@ -45,13 +46,19 @@ const clickHandler = () => {
             </div>
         </FormStyle>
         <IngredientList>
-            {ingredients.map(ingredient => {
+            {ingredients.map((ingredient) => {
                 return (
-                    <h2 key={ingredient}>{ingredient}</h2>
+                    <h2 key={ingredient} name={ingredient}>
+                        <FaRegTimesCircle
+                        size={16} 
+                        style={{position: "absolute", top: '5px', right: '5px', cursor: 'pointer'}}
+                        onClick={removeIngredient} />
+                        {ingredient}
+                    </h2>
                 )
             })}
         </IngredientList>
-        <Button onClick={clickHandler}>Find Recipe</Button>
+        <IngredientsLink to={`/recipesByIngredients/`}>Find Recipe</IngredientsLink>
     </Wrapper>
   )
 }
@@ -70,6 +77,7 @@ const IngredientList = styled.div`
         margin: 1rem;
         background: orange;
         border-radius: 15px;
+        position: relative;
     }
 `;
 
@@ -100,15 +108,17 @@ const FormStyle = styled.form`
     }
 `
 
-const Button = styled.button`
+const IngredientsLink = styled(Link)`
     background: linear-gradient(35deg, #494949, #313131);
     font-size: 1.5rem;
     color: white;
-    padding: 1rem 3rem;
-    border: none;
+    padding: 1rem 2rem;
     border-radius: 1rem;
     cursor: pointer;
+    text-decoration: none;
     display: block;
+    text-align: center;
+    width: max-content;
     margin: 0 auto;
 `
 
