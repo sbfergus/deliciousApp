@@ -1,6 +1,7 @@
 import Veggie from "../components/Veggie";
 import Popular from "../components/Popular";
 import Keto from "../components/Keto";
+import IngredientSearch from "../components/IngredientSearch";
 import { motion } from 'framer-motion';
 
 function Home() {
@@ -14,6 +15,7 @@ function Home() {
         <Popular />
         <Veggie />
         <Keto />
+        <IngredientSearch />
     </motion.div>
   )
 }
