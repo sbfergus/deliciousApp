@@ -51,7 +51,7 @@ function Veggie() {
                       <SplideSlide key={recipe.id}>
                           <div className='card'>
                             <Link to={`/recipe/${recipe.id}`}>
-                                <p>{recipe.title}</p>
+                                <p className="title">{recipe.title}</p>
                               <img src={recipe.image} alt={recipe.title} />
                               <div className='gradient'/>
                             </Link>  
