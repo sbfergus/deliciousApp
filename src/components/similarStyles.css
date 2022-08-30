@@ -1,0 +1,23 @@
+.similar {
+    background: orange;
+    border-radius: 15px;
+    min-height: 100px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.similar-title {
+    color: black;
+    padding: 2rem;
+    
+}
+
+.similar-wrapper {
+    margin: 2rem 0rem;
+}
+
+.similar-wrapper h3 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
+import SimilarRecipies from '../components/SimilarRecipies';
 
 function Recipe() {
   const [details, setDetails] = useState({});
@@ -19,6 +20,7 @@ function Recipe() {
   }, [params.name]);
 
   return (
+    <>
     <DetailWrapper>
       <div>
         <h2 style={{ fontSize: "2rem"}}>{details.title}</h2>
@@ -37,6 +39,7 @@ function Recipe() {
               Ingredients
           </Button>
         </ButtonWapper>
+        
         {activeTab === 'instructions' && 
         (<div style={{marginTop: "2rem"}}>
           <h3 dangerouslySetInnerHTML={{__html:details.summary}}></h3>
@@ -56,8 +59,11 @@ function Recipe() {
           </ul>
         </div>)
         }
+        
       </Info>
     </DetailWrapper>
+    <SimilarRecipies /> 
+    </>
   )
 }
 
@@ -104,6 +110,7 @@ const Button = styled.button`
 
 const Info = styled.div`
   margin-left: 10rem;
+  width: 100%;
   @media (max-width: 1170px) {
     margin-left: 0rem;
   };

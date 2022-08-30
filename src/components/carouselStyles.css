@@ -15,7 +15,7 @@
     object-fit: cover;
 }
 
-p {
+.title {
     position: absolute;
     z-index: 10;
     left: 50%;

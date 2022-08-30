@@ -11,7 +11,7 @@ function RecipesByIngredients() {
   
   const getRecipesByIngredients = async (ingredients) => {
     const data = await fetch(`
-    https://api.spoonacular.com/recipes/findByIngredients?apiKey=${process.env.REACT_APP_API_KEY}&ingredients=${ingredients}&number=9`);
+    https://api.spoonacular.com/recipes/findByIngredients?apiKey=${process.env.REACT_APP_API_KEY}&ingredients=${ingredients}&sort=min-missing-ingredients&number=9`);
     const recipes = await data.json();
     console.log(recipes);
     setRecipesByIngredients(recipes)
