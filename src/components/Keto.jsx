@@ -14,19 +14,9 @@ function Keto() {
     }, [])
 
     const getKeto = async () => {
-        const check = localStorage.getItem('keto');
-
-        if (check) {
-            setKeto(JSON.parse(check))
-        } else {
-            const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&tags=ketogenic&number=9`);
-            const data = await api.json();
-            localStorage.setItem('keto', JSON.stringify(data.recipes));
-            setKeto(data.recipes)
-            console.log(data.recipes);
-
-        }
-
+        const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&tags=ketogenic&number=9`);
+        const data = await api.json();
+        setKeto(data.recipes)
     }
 
   return (
