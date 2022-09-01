@@ -30,7 +30,7 @@ function Veggie() {
     return (
       <div>
           <div className='wrapper'>
-              <h3>Our Vegitarian Picks</h3>
+              <h3>Our Vegetarian Picks</h3>
               <Splide options={{
                   perPage: 3,
                   breakpoints: {
