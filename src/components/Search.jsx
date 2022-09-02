@@ -19,7 +19,8 @@ function Search() {
         <div style={{marginTop:0}}>
             <FaSearch />
             <input 
-                type="text" 
+                type="text"
+                placeholder='Something delicious...' 
                 onChange={(e) => setInput(e.target.value)}
                 value={input}
             />
@@ -34,6 +35,9 @@ const FormStyle = styled.form`
         position: relative;
         margin: auto;
         margin-top: 2rem;
+        @media (max-width: 400px) {
+            width: 100%;
+        }
     }
     input {
         border: none;
@@ -45,6 +49,12 @@ const FormStyle = styled.form`
         border-radius: 1rem;
         outline: none;
         width: 100%;
+        @media (max-width: 400px) {
+            font-size: 1rem;
+            ::placeholder {
+                font-size: 1rem;
+            }
+        }
     }
     svg {
         position: absolute;
@@ -53,6 +63,7 @@ const FormStyle = styled.form`
         transform: translate(100%, -50%);
         color: white;
     }
+    
 `
 
 export default Search

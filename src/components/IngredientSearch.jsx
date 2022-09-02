@@ -29,8 +29,7 @@ const removeIngredient = (e) => {
   return (
     <Wrapper>
         <h3 style={{
-            marginBottom: "2rem",
-            fontSize: "2rem"
+            
         }}>
         Search By Ingredients
         </h3>
@@ -65,12 +64,22 @@ const removeIngredient = (e) => {
 
 const Wrapper = styled.div`
     margin-bottom: 2rem;
+    h3 {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        @media (max-width: 400px) {
+            font-size: 1.6rem;
+        }
+    }
 `;
 
 const IngredientList = styled.div`
     display: flex;
     flex-wrap: wrap;
     margin-top: 2rem;
+    @media (max-width: 400px) {
+        margin-top: .5rem;
+    }
     h2 {
         color: black;
         padding: 1rem 2rem;
@@ -78,6 +87,11 @@ const IngredientList = styled.div`
         background: orange;
         border-radius: 15px;
         position: relative;
+        @media (max-width: 400px) {
+            font-size: .75rem;
+            padding: 1rem 1.5rem;
+            margin: .5rem;
+        }
     }
 `;
 
@@ -87,6 +101,9 @@ const FormStyle = styled.form`
         position: relative;
         margin: auto;
         margin-top: 2rem;
+        @media (max-width: 400px) {
+            width: 100%;
+        }
     }
     input {
         border: none;
@@ -98,6 +115,12 @@ const FormStyle = styled.form`
         border-radius: 1rem;
         outline: none;
         width: 100%;
+        @media (max-width: 400px) {
+            font-size: 1rem;
+            ::placeholder {
+                font-size: 1rem;
+            }
+        }
     }
     svg {
         position: absolute;
@@ -120,6 +143,10 @@ const IngredientsLink = styled(Link)`
     text-align: center;
     width: max-content;
     margin: 0 auto;
+    @media (max-width: 400px) {
+        font-size: 1rem;
+        margin-top: .5rem;
+    }
 `
 
 export default IngredientSearch

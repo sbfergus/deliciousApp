@@ -15,7 +15,6 @@ function Searched() {
     useEffect(() => {
         getSearchedRecipes(params.search);
     }, [params.type]);
-    console.log()
 
   return (
     <Grid>

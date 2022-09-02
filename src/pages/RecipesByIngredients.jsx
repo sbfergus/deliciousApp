@@ -13,7 +13,6 @@ function RecipesByIngredients() {
     const data = await fetch(`
     https://api.spoonacular.com/recipes/findByIngredients?apiKey=${process.env.REACT_APP_API_KEY}&ingredients=${ingredients}&sort=min-missing-ingredients&number=9`);
     const recipes = await data.json();
-    console.log(recipes);
     setRecipesByIngredients(recipes)
   }
 

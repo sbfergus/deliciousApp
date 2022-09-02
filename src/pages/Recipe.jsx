@@ -23,7 +23,7 @@ function Recipe() {
     <>
     <DetailWrapper>
       <div>
-        <h2 style={{ fontSize: "2rem"}}>{details.title}</h2>
+        <h2>{details.title}</h2>
         <RecipeImg src={details.image} alt="" />
       </div>
       <Info>
@@ -78,6 +78,13 @@ const DetailWrapper = styled.div`
   margin-top: 2rem;
   margin-bottom: 5rem;
   display: flex;
+  list-style-position: inside;
+  div h2 {
+    font-size: 2rem;
+    @media (max-width: 400px) {
+      font-size: 1.6rem;
+    }
+  }
   .active {
     background: linear-gradient(35deg, #494949, #313131);
     color: white;
@@ -89,9 +96,11 @@ const DetailWrapper = styled.div`
   li {
     font-size: 1.2rem;
     line-height: 2.5rem;
+    
   }
   ul {
     margin-top: 2rem;
+    list-style-position: inside;
   }
   @media (max-width: 1170px) {
     flex-direction: column;
