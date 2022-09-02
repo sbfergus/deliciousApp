@@ -50,9 +50,9 @@ const SLink = styled(NavLink)`
     transition: 1s ease all;
 
     @media (max-width: 600px) {
-        width: 5rem;
-        height: 5rem;
-        margin-right: 1rem;
+        width: 4rem;
+        height: 4rem;
+        margin-right: 0;
     };
 
     h4 {
@@ -62,7 +62,7 @@ const SLink = styled(NavLink)`
         margin-bottom: .25rem;
 
         @media (max-width: 600px) {
-            font-size: 0.6rem;
+            font-size: 0.55rem;
         };
     };
 
