@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import {FaSearch, FaRegTimesCircle} from 'react-icons/fa';
+import {FaSearch, FaRegTimesCircle, FaPlus} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -35,13 +35,16 @@ const removeIngredient = (e) => {
         </h3>
         <FormStyle id="ingredientForm" onSubmit={submitHandler}>
             <div>
-                <FaSearch />
+                <FaSearch className="mag-glass"/>
                 <input 
                 id="ingredientInput" 
                 type="text" 
                 placeholder='Whats in your fridge?'
                 value={userInput} 
                 onChange={changeHandler}/>
+                <button type="submit">
+                    <FaPlus />
+                </button>
             </div>
         </FormStyle>
         <IngredientList>
@@ -122,13 +125,31 @@ const FormStyle = styled.form`
             }
         }
     }
-    svg {
+    .mag-glass {
         position: absolute;
         top: 50%;
         left: 0%;
         transform: translate(100%, -50%);
         color: white;
     }
+
+    button {
+        position: absolute;
+        top: 50%;
+        right: 0%;
+        transform: translate(0%, -50%);
+        color: white;
+        height: 100%;
+        padding: 1rem;
+        background: none;
+        border:none;
+        cursor: pointer;
+    }
+
+    button svg {
+        font-size: 1.25rem;
+    }
+    
 `
 
 const IngredientsLink = styled(Link)`
