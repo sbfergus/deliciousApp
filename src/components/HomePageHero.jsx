@@ -24,8 +24,7 @@ function HomePageHero() {
             <Typical
                 loop={1}
                 steps={[
-                    'Recipes for any occasion',
-                    1000,
+                    'Recipes for any occasion'
                 ]} 
             />
         </h1>
