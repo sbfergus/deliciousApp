@@ -66,12 +66,20 @@ const removeIngredient = (e) => {
 }
 
 const Wrapper = styled.div`
-    margin-bottom: 2rem;
+    margin: 2rem 0rem;
+    background: #E5E4E5;
+    padding: 2rem 3rem 4rem 3rem;
+    @media (max-width: 400px) {
+        padding: 2rem 1rem;
+    }
     h3 {
         margin-bottom: 2rem;
         font-size: 2rem;
         @media (max-width: 400px) {
             font-size: 1.6rem;
+        }
+        @media (max-width: 360px) {
+            font-size: 1.25rem;
         }
     }
 `;
@@ -100,12 +108,13 @@ const IngredientList = styled.div`
 
 const FormStyle = styled.form`
     div {
-        width: 80%;
+        width: 100%;
         position: relative;
         margin: auto;
         margin-top: 2rem;
-        @media (max-width: 400px) {
-            width: 100%;
+        @media (max-width: 950px) {
+            
+            margin: 0;
         }
     }
     input {
@@ -122,6 +131,11 @@ const FormStyle = styled.form`
             font-size: 1rem;
             ::placeholder {
                 font-size: 1rem;
+            }
+        }
+        @media (max-width: 350px) {
+            ::placeholder {
+                font-size: .8rem;
             }
         }
     }
@@ -162,12 +176,13 @@ const IngredientsLink = styled(Link)`
     text-decoration: none;
     display: block;
     text-align: center;
-    width: max-content;
+    max-width: 250px;
     margin: 0 auto;
     @media (max-width: 400px) {
         font-size: 1rem;
-        margin-top: .5rem;
+        margin-top: 1.5rem;
     }
 `
 
 export default IngredientSearch
+

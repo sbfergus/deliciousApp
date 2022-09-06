@@ -4,9 +4,13 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
+/* html, body {
+  height:100%;
+}  */
 
 body {
   margin: 0% 10%;
+  padding-bottom: 1rem;;
 }
 
 h4 {
