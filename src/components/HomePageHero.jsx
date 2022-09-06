@@ -51,31 +51,31 @@ const Hero = styled.div`
     font-size: 10rem;
     position: absolute;
     width: 40%;
-    bottom: 15%;
+    top:25%;
     left: 15%;
     line-height: 105%;
     @media (max-width: 1500px) {
-      font-size: 7rem;
-      bottom: 22%;
-    }
-    @media (max-width: 1000px) {
+         font-size: 7rem;
+         top: 22%;
+         width: 60%;
+       }
+    @media (max-width: 687px) {
       font-size: 5rem;
-      bottom: 28%;
     }
-    @media (max-width: 750px) {
-      top: 25%;
-      width: 60%;
+    @media (max-width: 460px) {
+      font-size: 3.4rem;
+      top: 30%;
     }
-    @media (max-width: 485px) {
-      font-size: 4rem;
-    }
+    @media (max-width: 400px) {
+      left: 8%;
+    }  
   }
 `;
 
 const HeroButton = styled.button`
   color: white;
   position: absolute;
-  bottom: 40%;
+  top:50%;
   right: 20%;
   font-size: 2.5rem;
   padding: 2rem 3rem;
@@ -83,24 +83,28 @@ const HeroButton = styled.button`
   border-radius: 2rem;
   cursor: pointer;
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.57);
-  @media (max-width: 1200px) {
-    font-size: 1.5rem
-  }
-  @media (max-width: 1000px) {
-    font-size: 1.25rem;
-    padding: 1.5rem 2rem;
-  }
-  @media (max-width: 750px) {
-    bottom: 20%;
+  @media (max-width: 1500px) {
     left: 15%;
-    width: 200px;
+    top:80%;
+    font-size: 2rem;
+    width: 30%;
+  }
+  @media (max-width: 950px) {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+  }
+  @media (max-width: 687px) {
+    width: 50%;
+    top: 75%;
   }
   @media (max-width: 400px) {
-    bottom: 20%;
-    padding: 1rem 1.5rem;
-  }
+    left: 8%;
+    font-size: 1.25rem;
+    width: 60%;
+  } 
 `;
 
 
 
 export default HomePageHero
+
