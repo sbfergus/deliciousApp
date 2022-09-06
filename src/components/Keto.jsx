@@ -3,7 +3,7 @@ import "./carouselStyles.css";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import '@splidejs/react-splide/css';
 import { Link } from 'react-router-dom';
-
+import PlaceHolderPic from '../images/blur-photo.com_1662481341.jpg';
 
 function Keto() {
 
@@ -44,7 +44,7 @@ function Keto() {
                         <div className='card'>
                             <Link to={`/recipe/${recipe.id}`}>
                                 <p className="title">{recipe.title}</p>
-                                <img src={recipe.image} alt={recipe.title} />
+                                <img src={recipe.image ? recipe.image : PlaceHolderPic} alt={recipe.title} />
                                 <div className='gradient'></div>
                             </Link>
                         </div>

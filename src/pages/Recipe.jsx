@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import SimilarRecipies from '../components/SimilarRecipies';
+import PlaceHolderPic from '../images/blur-photo.com_1662481341.jpg';
 
 function Recipe() {
   const [details, setDetails] = useState({});
@@ -25,7 +26,7 @@ function Recipe() {
     <DetailWrapper>
       <div>
         <h2>{details.title}</h2>
-        <RecipeImg src={details.image} alt="" />
+        <RecipeImg src={details.image? details.image : PlaceHolderPic} alt="" />
       </div>
       <Info>
         <ButtonWapper>

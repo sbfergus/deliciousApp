@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import {motion} from  'framer-motion';
 import {Link, useParams} from 'react-router-dom';
 import styled from 'styled-components';
+import PlaceHolderPic from '../images/blur-photo.com_1662481341.jpg';
 
 function RecipesByIngredients() {
 
@@ -31,7 +32,7 @@ function RecipesByIngredients() {
         return (
           <Card key={item.id}>
             <Link to={`/recipe/${item.id}`}>
-              <img src={item.image} alt="" />
+              <img src={item.image? item.image : PlaceHolderPic} alt={item.title} />
               <h4>{item.title}</h4>
             </Link>
           </Card>

@@ -96,7 +96,7 @@ const HeroButton = styled.button`
     width: 200px;
   }
   @media (max-width: 400px) {
-    bottom: 10%;
+    bottom: 20%;
     padding: 1rem 1.5rem;
   }
 `;
